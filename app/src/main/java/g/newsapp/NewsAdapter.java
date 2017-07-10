@@ -24,13 +24,13 @@ public class NewsAdapter extends ArrayAdapter<News> {
         mContext = context;
     }
 
-    public static class BookView {
+    public static class NewsView {
         TextView title;
         TextView author;
         TextView section;
 
 
-        public BookView (View view) {
+        public NewsView(View view) {
             title = (TextView) view.findViewById(R.id.news_title);
             author = (TextView) view.findViewById(R.id.news_author);
             section = (TextView) view.findViewById(R.id.news_section);
@@ -38,29 +38,19 @@ public class NewsAdapter extends ArrayAdapter<News> {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        BookView bookView;
-
-        list = (ListView) list.findViewById(R.id.news_list);
+        NewsView newsView;
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.news_list, parent, false);
-            bookView = new BookView(convertView);
-            convertView.setTag(bookView);
-        } else { bookView = (BookView) convertView.getTag(); }
+            newsView = new NewsView(convertView);
+            convertView.setTag(newsView);
+        } else { newsView = (NewsView) convertView.getTag(); }
 
         News current = getItem(position);
 
-        bookView.title.setText(current.getTitle());
-        bookView.author.setText(current.getAuthor());
-        bookView.section.setText(current.getAuthorr());
-
-        list.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Log.d("Button", "clickie");
-            }
-        });
-
+        newsView.title.setText(current.getTitle());
+        newsView.author.setText(current.getAuthor());
+        newsView.section.setText(current.getAuthorr());
         return convertView;
     }
 }
