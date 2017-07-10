@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             "http://content.guardianapis.com/search?q=technology&&order-by=newest&order-date=published&show-section=true&show-fields=headline&show-references=author&page=1&page-size=50&api-key=test";
     private NewsAdapter newsAdapter;
     private static final int NEWS_LOADER_ID = 1;
-    private String searchFor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +34,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         /*{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Find the current news that was clicked on
                 News currentNews = newsAdapter.getItem(position);
-
-                // Check value of newsUrl and convert the String URL into a URI object (to pass into the Intent constructor)
                 Uri newsUri = Uri.parse(currentNews != null ? "http://google.com" : null);
-                Log.i("Button", "listview button pressed: ");
-
-                // Create a new intent to view buy the news URI
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, currentNews);
-
-                // Send the intent to launch a new activity
                 startActivity(websiteIntent);
             }
         });*/
