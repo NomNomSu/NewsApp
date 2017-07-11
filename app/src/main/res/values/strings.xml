@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="no_news_or_conn">Oh no, something is wrong! Frist please check internet connection and if it still does not work then contact developer.</string>
 </resources>

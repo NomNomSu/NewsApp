@@ -3,4 +3,5 @@
     <dimen name="margins">8dp</dimen>
     <dimen name="section_text_size">14sp</dimen>
     <dimen name="title_text_size">16sp</dimen>
+    <dimen name="no_con_news_text_size">20sp</dimen>
 </resources>
